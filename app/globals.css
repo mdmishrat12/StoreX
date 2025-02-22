@@ -87,6 +87,24 @@
   }
 }
 
+/* Add this to your global CSS */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(249, 201, 192);
+}
+
+::-webkit-scrollbar-thumb {
+  background: tomato;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: tomato
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground;

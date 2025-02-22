@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProviderWrapper from "./themewrapper";
-import Navbar from "@/components/shared/navbar/navbar";
 
 const inter = Inter({subsets:['latin']})
 
@@ -22,7 +21,6 @@ export default function RootLayout({
         className={`${inter.className} antialiased bg-background min-h-screen`}
       >
         <ThemeProviderWrapper>
-        <Navbar/>
         {children}
         </ThemeProviderWrapper>
       </body>

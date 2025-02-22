@@ -1,30 +1,33 @@
-import { Minus, Plus, Trash } from 'lucide-react'
-import Image from 'next/image'
-import React from 'react'
+import CartItem from "../ui/cart-item/cart-item";
+import Button from "../ui/button/button";
+import Link from "next/link";
 
 const Cart = () => {
   return (
     <>
-       <h3 className='py-4'>Shopping Cart</h3>
-       <div className="w-full">
-        <div className="flex justify-between items-center p-4 w-full border">
-            <div className="flex gap-4 items-center">
-            <Image width={100} height={110} alt='' src=""/>
-            <div className="">
-                <h3>Product-1</h3>
-                <p>Price : $350</p>
-            </div>
-            </div>
-            <div className="flex items-center gap-2">
-                <Minus/>
-               <input type="number" name="" id="" className=' text-center w-[50px] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none border'/>
-               <Plus/>
-            </div>
-            <Trash/>
+      <div className="pb-8">
+      <h3 className="py-4">Shopping Cart</h3>
+      <div className="w-full space-y-2">
+        {Array.from({ length: 5 }).map((item,i) => (
+          <><CartItem key={i} />{item}</>
+        ))}
+      </div>
+      <div className="border p-4 my-4 space-y-2">
+        <div className="flex items-center justify-between">
+          <h3>Shipping Fee:</h3>
+          <h3>$300</h3>
         </div>
-       </div>
+        <div className="flex items-center justify-between text-lg">
+          <h3>Total:</h3>
+          <h3>$300</h3>
+        </div>
+      </div>
+      </div>
+     <div className="fixed bottom-0 w-[48rem]">
+     <Link href='/checkout'><Button className="w-[46rem]">Continut Checkout</Button></Link>
+     </div>
     </>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
